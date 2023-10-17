@@ -1,0 +1,187 @@
+@use "./base" as *;
+
+#main {
+  @include min(90%, 90vh);
+  @include max(90%, 90vh);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  #player-info-container {
+    @include min(100%, 10vh);
+    @include max(100%, 10vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #info-background {
+      @include min(30%, 6vh);
+      @include max(60%, 6vh);
+      background-image: url(./image/background3.jpg);
+      background-size: contain;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #info {
+      font-size: clamp(0.1rem, 3vmin, 3rem);
+      font-family: "Press Start 2P";
+      color: white;
+      padding: 0.5rem;
+    }
+  }
+  #board-container {
+    @include min(100%, 50vh);
+    @include max(100%, 50vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .board {
+      @include min(50vmin, 50vmin);
+      @include max(50vmin, 50vmin);
+      display: grid;
+      align-items: center;
+      justify-content: space-around;
+      grid-template-columns: repeat(3, auto);
+
+      .cell {
+        @include min(15vmin, 15vmin);
+        @include max(15vmin, 15vmin);
+        font-family: "Press Start 2P";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bolder;
+        font-size: clamp(0.1rem, 5vmin, 5rem);
+        border: 1px solid;
+        background-color: rgba($color: white, $alpha: 0.2);
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+    }
+  }
+  #button-container {
+    @include min(100%, 10vh);
+    @include max(100%, 10vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .undoBtn,
+    .resetBtn,
+    .redoBtn {
+      @include min(20%, 7vh);
+      @include max(20%, auto);
+      font-size: clamp(0.1rem, 2vmin, 2rem);
+      color: white;
+      background-color: transparent;
+      border: none;
+      font-family: "Press Start 2P";
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .undoBtn:hover,
+    .resetBtn:hover,
+    .redoBtn:hover {
+      background-image: url(./image/mushroom.png);
+      background-size: clamp(0.1rem, 6vw, 6rem);
+      background-repeat: no-repeat;
+      background-position: left;
+      padding-left: 1rem;
+    }
+  }
+  #move-history-container {
+    @include min(100%, 5vh);
+    @include max(100%, 5vh);
+    display: flex;
+    justify-content: center;
+    .historyBtn {
+      @include min(25%, 7vh);
+      @include max(25%, auto);
+      font-size: clamp(0.1rem, 2vmin, 2rem);
+      color: white;
+      background-color: transparent;
+      border: none;
+      font-family: "Press Start 2P";
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .historyBtn:hover {
+      background-image: url(./image/mushroom.png);
+      background-size: clamp(0.1rem, 6vw, 6rem);
+      background-repeat: no-repeat;
+      background-position: left;
+      padding-left: 1rem;
+    }
+  }
+  #move-history {
+    @include min(30vmin, 40vmin);
+    @include max(60vmin, auto);
+    background-image: url(./image/mario.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 10px;
+    opacity: 0.9;
+    z-index: 10;
+    transition-delay: 0.5s;
+    .moveList {
+      text-overflow: ellipsis;
+      font-size: clamp(0.01rem, 3vmin, 3rem);
+      list-style: none;
+      font-family: "Press Start 2P";
+      padding: 0.3rem;
+      color: white;
+    }
+  }
+  .coin-container {
+    @include min(100%, 5vh);
+    @include max(100%, 5vh);
+    display: flex;
+    justify-content: space-around;
+
+    .coin-img {
+      position: relative;
+      top: -3rem;
+      z-index: -10;
+      opacity: 0;
+      @include min(3vw, 3vw);
+      @include max(3vw, auto);
+      animation: coinsDown 2s ease-in-out 1.5s infinite;
+    }
+    .coin-img:nth-child(2) {
+      animation: coinsDown 2s ease-in-out 2s infinite;
+    }
+
+    .coin-img:nth-child(3) {
+      animation: coinsDown 2s ease-in-out 3s infinite;
+    }
+
+    .coin-img:nth-child(4) {
+      animation: coinsDown 2s ease-in-out 2.5s infinite;
+    }
+
+    .coin-img:nth-child(5) {
+      animation: coinsDown 2s ease-in-out 3s infinite;
+    }
+
+    .coin-img:nth-child(6) {
+      animation: coinsDown 2s ease-in-out 3.5s infinite;
+    }
+
+    .coin-img:nth-child(7) {
+      animation: coinsDown 2s ease-in-out 4s infinite;
+    }
+  }
+}

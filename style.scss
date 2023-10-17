@@ -1,0 +1,85 @@
+@use "./base" as *;
+@use "./board";
+
+#choose-player-container {
+  @include min(100vw, 100vh);
+  @include max(100vw, 100vh);
+  background-image: url(./image/background4.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  left: 50;
+  right: 50;
+  #title-container {
+    @include min(100vw, 60vh);
+    @include max(100vw, 60vh);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    #title {
+      font-family: "Press Start 2P";
+      color: white;
+      font-size: clamp(0.01rem, 6vmin, 6rem);
+      text-shadow: 2px 5px 0 rgba(0, 0, 0, 1);
+    }
+  }
+  #choose-btn-container {
+    @include min(100vw, 30vh);
+    @include max(100vw, 30vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .playerX,
+    .playerO {
+      @include min(50vw, 10vh);
+      @include max(50vw, 10vh);
+      font-family: "Press Start 2P";
+      color: white;
+      font-size: clamp(0.01rem, 5vmin, 5rem);
+      text-shadow: 2px 5px 0 rgba(0, 0, 0, 1);
+      background-color: transparent;
+      border: none;
+    }
+    .playerX:hover,
+    .playerO:hover {
+      background-image: url(./image/mushroom.png);
+      background-size: clamp(0.01rem, 6vw, 6rem);
+      background-repeat: no-repeat;
+      background-position: left;
+      padding-left: 1rem;
+    }
+  }
+}
+
+.disabled {
+  visibility: hidden;
+  display: none;
+}
+@keyframes coinsDown {
+  0% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(80vh);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #choose-player-container {
+    @include min(100vw, 100vh);
+    @include max(100vw, 100vh);
+    background-image: url(./image/background6.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 50;
+    right: 50;
+  }
+}

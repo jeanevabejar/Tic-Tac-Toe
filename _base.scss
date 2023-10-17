@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+@mixin max($maxW, $maxH) {
+  max-width: $maxW;
+  max-height: $maxH;
+}
+@mixin min($minW, $minH) {
+  min-width: $minW;
+  min-height: $minH;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // outline: 1px solid purple;
+}
+
+body {
+  @include min(100%, 100vh);
+  @include max(100%, 100vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(./image/background2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-wrap: wrap;
+}
