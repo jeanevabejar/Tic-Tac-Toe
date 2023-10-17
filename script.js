@@ -51,6 +51,7 @@ function displayBoard() {
       board.appendChild(cell);
     }
   }
+
 }
 displayBoard();
 
@@ -58,12 +59,12 @@ function clickHandler(row, col) {
   if (boardState[row][col] === "" && !gameOver) {
     const playerSymbol = currentPlayer;
     boardState[row][col] = currentPlayer;
-    currentPlayer = currentPlayer === "O" ? "X" : "O";
     info.textContent = `It's ${currentPlayer} turn`;
     savedMoved.push({ row, col, playerSymbol });
     displayBoard();
-    checkWinner();
     updateHistory(playerSymbol, row, col);
+    checkWinner();
+    currentPlayer = currentPlayer === "O" ? "X" : "O";
   }
 }
 
