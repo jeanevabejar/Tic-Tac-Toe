@@ -93,7 +93,7 @@ function checkWinner() {
     ) {
       gameOver = true;
       info.textContent = `${currentPlayer} Player Wins`;
-      historyListContainer.classList.remove("disabled");
+      setTimeout(()=>historyListContainer.classList.remove("disabled"), 700);
       coins.classList.remove("disabled");
       undoBtn();
       resetBtn();
@@ -103,7 +103,7 @@ function checkWinner() {
     } else if (isDraw === true) {
       gameOver = true;
       info.textContent = "It's a draw";
-      historyListContainer.classList.remove("disabled");
+      setTimeout(()=>historyListContainer.classList.remove("disabled"), 700);
       coins.classList.remove("disabled");
       undoBtn();
       resetBtn();

@@ -53,10 +53,9 @@
         align-items: center;
         font-weight: bolder;
         font-size: clamp(0.1rem, 5vmin, 5rem);
-        border: 1px solid;
+        border: none;
         background-color: rgba($color: white, $alpha: 0.2);
         color: white;
-        border: none;
         border-radius: 5px;
       }
     }
@@ -135,7 +134,6 @@
     border-radius: 10px;
     opacity: 0.9;
     z-index: 10;
-    transition-delay: 0.5s;
     .moveList {
       text-overflow: ellipsis;
       font-size: clamp(0.01rem, 3vmin, 3rem);

@@ -86,10 +86,9 @@ body {
   align-items: center;
   font-weight: bolder;
   font-size: clamp(0.1rem, 5vmin, 5rem);
-  border: 1px solid;
+  border: none;
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
-  border: none;
   border-radius: 5px;
 }
 #main #button-container {
@@ -174,7 +173,6 @@ body {
   border-radius: 10px;
   opacity: 0.9;
   z-index: 10;
-  transition-delay: 0.5s;
 }
 #main #move-history .moveList {
   text-overflow: ellipsis;
