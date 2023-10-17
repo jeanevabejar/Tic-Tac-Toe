@@ -31,7 +31,7 @@ function chooseBtn() {
   chooseBtnContainer.appendChild(player1);
   chooseBtnContainer.appendChild(player2);
 }
-chooseBtn();
+
 function choosePlayer(player) {
   currentPlayer = player;
   displayBoard();
@@ -53,7 +53,7 @@ function displayBoard() {
   }
 
 }
-displayBoard();
+
 
 function clickHandler(row, col) {
   if (boardState[row][col] === "" && !gameOver) {
@@ -208,3 +208,6 @@ function updateBoard() {
   coins.classList.add("disabled");
   displayBoard();
 }
+
+displayBoard();
+chooseBtn();
